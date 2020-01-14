@@ -32,14 +32,44 @@ module cam_read #(
 		output px_wr
    );
 	
+reg [7:0]RDatos;
+reg [7:0]Rdatos;
+reg [14:0]Paddr;
+reg RWrite;
+reg count = 0;
 
-/********************************************************************************
+always @ (negedge px_wr) begin
+	if(vsync==0) begin
+		Paddr = Paddr+1;
+		end
+	else Paddr = 0;
+end
 
-Por favor colocar en este archivo el desarrollo realizado por el grupo para la 
-captura de datos de la camara 
 
-debe tener en cuenta el nombre de las entradas  y salidad propuestas 
+always @ (posedge pclk) begin
+		if(href==1) begin
+			if(count == 0) begin
+				RWrite = 0;
+				Rdatos[7] = RDatos[7];
+				Rdatos[6] = RDatos[6];
+				Rdatos[5] = RDatos[5];
+				Rdatos[4] = RDatos[2];
+				Rdatos[3] = RDatos[1];
+				Rdatos[2] = RDatos[0];
+				count = count+1;
+			end
+			if(count == 1) begin
+				Rdatos[1] = RDatos[4];
+				Rdatos[0] = RDatos[3];
+				count = count+1;
+				RWrite = 1;
+			end
+		end
+end
 
-********************************************************************************/
+assign mem_px_addr = Paddr;
+assign px_data = RDatos;
+assign mem_px_data = Rdatos;
+assign px_wr = RWrite;
 
 endmodule
