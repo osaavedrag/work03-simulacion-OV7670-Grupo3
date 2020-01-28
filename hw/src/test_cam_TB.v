@@ -71,7 +71,7 @@ module test_cam_TB;
    	// Wait 100 ns for global reset to finish
 		#20;
 		rst = 0;
-		#1000000 img_generate=1;
+		#100 img_generate=1;
 	end
 
 	always #0.5 clk  = ~clk;
@@ -161,4 +161,3 @@ module test_cam_TB;
 	end
 	
 endmodule
-

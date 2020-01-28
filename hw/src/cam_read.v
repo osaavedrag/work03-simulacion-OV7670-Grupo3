@@ -27,24 +27,59 @@ module cam_read #(
 		input href,
 		input [7:0] px_data,
 
-		output [AW-1:0] mem_px_addr,
-		output [7:0]  mem_px_data,
-		output px_wr
+		output reg [AW-1:0] mem_px_addr = 0,
+		output reg [7:0]  mem_px_data = 0,
+		output reg px_wr = 0
    );
-	
+
+reg [0:0] C = 0;
+
+always @ (negedge px_wr) begin
+	if(vsync == 0) begin
+		mem_px_addr = mem_px_addr + 1;
+		end
+	else begin 
+		mem_px_addr = 0;
+	end
+end
+
+always @ (posedge pclk) begin
+		if(href == 1) begin
+			if(C == 0) begin
+				px_wr = 0;
+				mem_px_data[7] = px_data[7];
+				mem_px_data[6] = px_data[6];
+				mem_px_data[5] = px_data[5];
+				mem_px_data[4] = px_data[2];
+				mem_px_data[3] = px_data[1];
+				mem_px_data[2] = px_data[0];
+				C = 1;
+			end 
+			else begin
+				mem_px_data[1] = px_data[4];
+				mem_px_data[0] = px_data[3];
+				C = 0;
+				px_wr = 1;
+			end
+		end
+end
+
+endmodule
+
+/*	
 reg [7:0]RDatos;
 reg [7:0]Rdatos;
 reg [14:0]Paddr;
 reg RWrite;
 reg count = 0;
+reg [7:0]Ccount;
+reg [7:0]Pcount;*/
 
-always @ (negedge px_wr) begin
-	if(vsync==0) begin
-		Paddr = Paddr+1;
-		end
-	else Paddr = 0;
-end
-
+/*
+assign mem_px_addr = Paddr;
+assign px_data = Rdatos;
+assign mem_px_data = RDatos;
+assign px_wr = RWrite;
 
 always @ (posedge pclk) begin
 		if(href==1) begin
@@ -63,13 +98,27 @@ always @ (posedge pclk) begin
 				Rdatos[0] = RDatos[3];
 				count = count+1;
 				RWrite = 1;
-			end
+				if(Pcount <= 160) Pcount = Pcount + 1;
+				else Pcount = 0;*/
+			//end
+		/*else begin
+		if(Ccount <= 120) Ccount = Ccount + 1;
+		else Ccount = 0;
+		end*/
+		//end
+//end
+
+/*always @ (negedge px_wr) begin
+	if(vsync==0) begin
+		Paddr = Paddr+1;
 		end
+	else begin 
+		Paddr = 0;
+	end
 end
 
-assign mem_px_addr = Paddr;
-assign px_data = RDatos;
-assign mem_px_data = Rdatos;
-assign px_wr = RWrite;
 
-endmodule
+assign pixel = Pcount;
+assign Column = Ccount;*/
+
+//endmodule
