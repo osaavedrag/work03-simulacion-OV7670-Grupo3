@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-saav9-Aspire-E3-112::  Mon Jan 27 13:26:54 2020
+saav9-Aspire-E3-112::  Wed Jan 29 14:59:03 2020
 
 par -w -intstyle ise -ol high -mt off test_cam_map.ncd test_cam.ncd
 test_cam.pcf 
@@ -27,24 +27,24 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        101 out of  63,400    1%
-    Number used as logic:                       97 out of  63,400    1%
-      Number using O6 output only:              42
-      Number using O5 output only:              33
+  Number of Slice LUTs:                         89 out of  63,400    1%
+    Number used as logic:                       84 out of  63,400    1%
+      Number using O6 output only:              30
+      Number using O5 output only:              32
       Number using O5 and O6:                   22
       Number used as ROM:                        0
     Number used as Memory:                       0 out of  19,000    0%
-    Number used exclusively as route-thrus:      4
+    Number used exclusively as route-thrus:      5
       Number with same-slice register load:      0
-      Number with same-slice carry load:         4
+      Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    38 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          102
-    Number with an unused Flip Flop:            62 out of     102   60%
-    Number with an unused LUT:                   1 out of     102    1%
-    Number of fully used LUT-FF pairs:          39 out of     102   38%
+  Number of occupied Slices:                    34 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:           89
+    Number with an unused Flip Flop:            49 out of      89   55%
+    Number with an unused LUT:                   0 out of      89    0%
+    Number of fully used LUT-FF pairs:          40 out of      89   44%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -99,19 +99,19 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 37 secs 
-Finished initial Timing Analysis.  REAL time: 37 secs 
+Starting initial Timing Analysis.  REAL time: 38 secs 
+Finished initial Timing Analysis.  REAL time: 38 secs 
 
 Starting Router
 
 
-Phase  1  : 1345 unrouted;      REAL time: 41 secs 
+Phase  1  : 1269 unrouted;      REAL time: 42 secs 
 
-Phase  2  : 901 unrouted;      REAL time: 42 secs 
+Phase  2  : 825 unrouted;      REAL time: 42 secs 
 
-Phase  3  : 86 unrouted;      REAL time: 44 secs 
+Phase  3  : 56 unrouted;      REAL time: 45 secs 
 
-Phase  4  : 86 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+Phase  4  : 56 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
 
 Updating file: test_cam.ncd with current fully routed design.
 
@@ -125,7 +125,7 @@ Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL 
 
 Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 Total REAL time to Router completion: 52 secs 
-Total CPU time to Router completion: 51 secs 
+Total CPU time to Router completion: 52 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -143,17 +143,17 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|              clk25M | BUFGCTRL_X0Y0| No   |   26 |  0.100     |  1.329      |
+|      CAM_pclk_BUFGP | BUFGCTRL_X0Y3| No   |   19 |  0.099     |  1.336      |
 +---------------------+--------------+------+------+------------+-------------+
 |clk25_24/clkfbout_bu |              |      |      |            |             |
 |                   f | BUFGCTRL_X0Y1| No   |    1 |  0.000     |  1.411      |
 +---------------------+--------------+------+------+------------+-------------+
-|      CAM_pclk_BUFGP | BUFGCTRL_X0Y3| No   |   19 |  0.075     |  1.329      |
-+---------------------+--------------+------+------+------------+-------------+
 |     clk25_24/clkin1 |BUFGCTRL_X0Y31| No   |    1 |  0.000     |  1.414      |
 +---------------------+--------------+------+------+------------+-------------+
+|              clk25M | BUFGCTRL_X0Y2| No   |   26 |  0.113     |  1.337      |
++---------------------+--------------+------+------+------------+-------------+
 |ov7076_565_to_332/px |              |      |      |            |             |
-|                 _wr |         Local|      |   68 |  0.224     |  1.468      |
+|                 _wr |         Local|      |   69 |  0.260     |  1.636      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -178,8 +178,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | MINLOWPULSE |     6.000ns|     4.000ns|       0|           0
   pin" 100 MHz HIGH 50%                     |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_clk25_24_clkout0 = PERIOD TIMEGRP "clk | SETUP       |    33.270ns|     6.730ns|       0|           0
-  25_24_clkout0" TS_sys_clk_pin * 0.25      | HOLD        |     0.324ns|            |       0|           0
+  TS_clk25_24_clkout0 = PERIOD TIMEGRP "clk | SETUP       |    33.785ns|     6.215ns|       0|           0
+  25_24_clkout0" TS_sys_clk_pin * 0.25      | HOLD        |     0.322ns|            |       0|           0
       HIGH 50%                              |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
@@ -194,8 +194,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      4.000ns|      1.683ns|            0|            0|            0|        33827|
-| TS_clk25_24_clkout0           |     40.000ns|      6.730ns|          N/A|            0|            0|        33827|            0|
+|TS_sys_clk_pin                 |     10.000ns|      4.000ns|      1.554ns|            0|            0|            0|         9683|
+| TS_clk25_24_clkout0           |     40.000ns|      6.215ns|          N/A|            0|            0|         9683|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -205,10 +205,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 53 secs 
-Total CPU time to PAR completion: 52 secs 
+Total REAL time to PAR completion: 54 secs 
+Total CPU time to PAR completion: 53 secs 
 
-Peak Memory Usage:  1043 MB
+Peak Memory Usage:  1045 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

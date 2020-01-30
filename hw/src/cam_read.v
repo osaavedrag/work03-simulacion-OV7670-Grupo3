@@ -54,8 +54,8 @@ always @ (posedge pclk) begin
 				mem_px_data[3] = px_data[1];
 				mem_px_data[2] = px_data[0];
 				C = 1;
-			end 
-			else begin
+			end else
+			if(C == 1) begin
 				mem_px_data[1] = px_data[4];
 				mem_px_data[0] = px_data[3];
 				C = 0;

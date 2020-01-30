@@ -22,9 +22,9 @@ module buffer_ram_dp#(
 	parameter   imageFILE= "src/image.men")
 	(  
 	input  clk_w, 
-	input  [AW-1: 0] addr_in, 
-	input  [DW-1: 0] data_in,
-	input  regwrite, 
+	input [AW-1: 0] addr_in, 
+	input [DW-1: 0] data_in,
+	input regwrite, 
 	
 	input  clk_r, 
 	input [AW-1: 0] addr_out,
@@ -40,7 +40,7 @@ localparam NPOS = 2 ** AW; // Memoria
 //	 escritura  de la memoria port 1 
 always @(posedge clk_w) begin 
        if (regwrite == 1) 
-             ram[addr_in] <= data_in;
+             ram[addr_in] <= data_in;		 
 end
 
 //	 Lectura  de la memoria port 2 

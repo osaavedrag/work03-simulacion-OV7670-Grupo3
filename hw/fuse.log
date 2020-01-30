@@ -13,8 +13,8 @@ Analyzing Verilog file "/home/saav9/Documentos/14.7/ISE_DS/ISE//verilog/src/glbl
 Starting static elaboration
 WARNING:HDLCompiler:1016 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam.v" Line 115: Port LOCKED is not connected to this instance
 Completed static elaboration
-Fuse Memory Usage: 85944 KB
-Fuse CPU Usage: 1610 ms
+Fuse Memory Usage: 85948 KB
+Fuse CPU Usage: 1600 ms
 Compiling module BUFG
 Compiling module MMCME2_ADV(CLKOUT1_DIVIDE=50,CLK...
 Compiling module clk24_25_nexys4
@@ -28,6 +28,6 @@ Time Resolution for simulation is 1ps.
 Waiting for 5 sub-compilation(s) to finish...
 Compiled 9 Verilog Units
 Built simulation executable /home/saav9/work03-simulacion-OV7670-Grupo3/hw/test_cam_TB_isim_beh.exe
-Fuse Memory Usage: 396552 KB
-Fuse CPU Usage: 1980 ms
-GCC CPU Usage: 9400 ms
+Fuse Memory Usage: 396560 KB
+Fuse CPU Usage: 1960 ms
+GCC CPU Usage: 9430 ms

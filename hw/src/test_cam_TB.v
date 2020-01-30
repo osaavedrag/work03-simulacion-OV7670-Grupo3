@@ -71,7 +71,7 @@ module test_cam_TB;
    	// Wait 100 ns for global reset to finish
 		#20;
 		rst = 0;
-		#100 img_generate=1;
+		#1000000 img_generate=1;
 	end
 
 	always #0.5 clk  = ~clk;
@@ -80,6 +80,11 @@ module test_cam_TB;
 	
 	reg [9:0]line_cnt=0;
 	reg [9:0]row_cnt=0;
+	
+	reg [3:0] count = 0;
+	reg [15:0] color = 00000000;
+	reg [127:0] color_data = 128'b00000000000000001111100000000000000001111110000000000000000111111111111111100000111110000001111100000111111111110000000000000000;
+	
 	
 	parameter TAM_LINE=320;	// es 160x2 debido a que son dos pixeles de RGB
 	parameter TAM_ROW=120;
@@ -135,6 +140,23 @@ module test_cam_TB;
 		end
 		end
 	end
+	
+	//SIMULACON CAMBIO DE COLORES BARRA
+	//Añadimos este ciclo para variar el color de CAM_
+	initial forever begin
+		@(negedge pclk) begin
+		if (img_generate==1 && CAM_href==1) begin
+			if(count==0) begin
+				color = color_data[127:112];
+				color_data = color_data*65536+color;
+			end
+			CAM_px_data = color[15:8];
+			color = color*256+CAM_px_data;
+			count=count+1;
+		end
+		end
+	end
+
 
 
 	/*************************************************************************

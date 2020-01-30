@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 Reading design: test_cam.prj
@@ -228,7 +228,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  25 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <cam_read> synthesized.
 
 =========================================================================
@@ -255,7 +255,8 @@ Macro Statistics
  10-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 2
  9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 3
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 2
  15-bit 2-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 2
 
@@ -324,8 +325,8 @@ Macro Statistics
  10-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 2
  9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 10
- 1-bit 2-to-1 multiplexer                              : 8
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 10
  15-bit 2-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 1
 
@@ -375,12 +376,12 @@ Top Level Output File Name         : test_cam.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 206
+# BELS                             : 209
 #      GND                         : 1
-#      INV                         : 5
+#      INV                         : 4
 #      LUT1                        : 36
-#      LUT2                        : 36
-#      LUT3                        : 12
+#      LUT2                        : 39
+#      LUT3                        : 13
 #      LUT4                        : 8
 #      LUT5                        : 2
 #      LUT6                        : 6
@@ -389,8 +390,8 @@ Primitive and Black Box Usage:
 #      XORCY                       : 52
 # FlipFlops/Latches                : 44
 #      FD                          : 8
-#      FDE                         : 10
-#      FDR                         : 15
+#      FDE                         : 8
+#      FDR                         : 17
 #      FDRE                        : 5
 #      FDS                         : 2
 #      FDSE                        : 4
@@ -414,15 +415,15 @@ Selected Device : 7a100tcsg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              44  out of  126800     0%  
- Number of Slice LUTs:                  105  out of  63400     0%  
-    Number used as Logic:               105  out of  63400     0%  
+ Number of Slice LUTs:                  108  out of  63400     0%  
+    Number used as Logic:               108  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    106
-   Number with an unused Flip Flop:      62  out of    106    58%  
-   Number with an unused LUT:             1  out of    106     0%  
-   Number of fully used LUT-FF pairs:    43  out of    106    40%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:    108
+   Number with an unused Flip Flop:      64  out of    108    59%  
+   Number with an unused LUT:             0  out of    108     0%  
+   Number of fully used LUT-FF pairs:    44  out of    108    40%  
+   Number of unique control sets:         8
 
 IO Utilization: 
  Number of IOs:                          30
@@ -516,24 +517,25 @@ Delay:               1.820ns (Levels of Logic = 16)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CAM_pclk'
-  Clock period: 1.222ns (frequency: 818.666MHz)
-  Total number of paths / destination ports: 26 / 18
+  Clock period: 1.516ns (frequency: 659.631MHz)
+  Total number of paths / destination ports: 29 / 20
 -------------------------------------------------------------------------
-Delay:               1.222ns (Levels of Logic = 0)
-  Source:            ov7076_565_to_332/mem_px_data_0 (FF)
-  Destination:       DP_RAM/Mram_ram1 (RAM)
+Delay:               1.516ns (Levels of Logic = 1)
+  Source:            ov7076_565_to_332/C_0 (FF)
+  Destination:       ov7076_565_to_332/C_0 (FF)
   Source Clock:      CAM_pclk rising
   Destination Clock: CAM_pclk rising
 
-  Data Path: ov7076_565_to_332/mem_px_data_0 to DP_RAM/Mram_ram1
+  Data Path: ov7076_565_to_332/C_0 to ov7076_565_to_332/C_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.361   0.283  ov7076_565_to_332/mem_px_data_0 (ov7076_565_to_332/mem_px_data_0)
-     RAMB36E1:DIADI0           0.577          DP_RAM/Mram_ram1
+     FDR:C->Q             12   0.361   0.430  ov7076_565_to_332/C_0 (ov7076_565_to_332/C_0)
+     LUT2:I0->O            1   0.097   0.279  ov7076_565_to_332/_n00411 (ov7076_565_to_332/_n0041)
+     FDR:R                     0.349          ov7076_565_to_332/C_0
     ----------------------------------------
-    Total                      1.222ns (0.938ns logic, 0.283ns route)
-                                       (76.8% logic, 23.2% route)
+    Total                      1.516ns (0.807ns logic, 0.709ns route)
+                                       (53.2% logic, 46.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk25_24/clkout0'
@@ -580,23 +582,23 @@ Offset:              0.694ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CAM_pclk'
-  Total number of paths / destination ports: 18 / 18
+  Total number of paths / destination ports: 20 / 20
 -------------------------------------------------------------------------
-Offset:              0.485ns (Levels of Logic = 2)
-  Source:            CAM_px_data<4> (PAD)
-  Destination:       ov7076_565_to_332/mem_px_data_1 (FF)
+Offset:              1.072ns (Levels of Logic = 2)
+  Source:            CAM_href (PAD)
+  Destination:       ov7076_565_to_332/C_0 (FF)
   Destination Clock: CAM_pclk rising
 
-  Data Path: CAM_px_data<4> to ov7076_565_to_332/mem_px_data_1
+  Data Path: CAM_href to ov7076_565_to_332/C_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.379  CAM_px_data_4_IBUF (CAM_px_data_4_IBUF)
-     LUT3:I1->O            1   0.097   0.000  ov7076_565_to_332/mux1111 (ov7076_565_to_332/mem_px_data[7]_px_data[7]_mux_8_OUT<1>)
-     FDE:D                     0.008          ov7076_565_to_332/mem_px_data_1
+     IBUF:I->O            12   0.001   0.346  CAM_href_IBUF (CAM_href_IBUF)
+     LUT2:I1->O            1   0.097   0.279  ov7076_565_to_332/_n00411 (ov7076_565_to_332/_n0041)
+     FDR:R                     0.349          ov7076_565_to_332/C_0
     ----------------------------------------
-    Total                      0.485ns (0.106ns logic, 0.379ns route)
-                                       (21.8% logic, 78.2% route)
+    Total                      1.072ns (0.447ns logic, 0.625ns route)
+                                       (41.7% logic, 58.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk25_24/clkout0'
@@ -668,7 +670,7 @@ Clock to Setup on destination clock CAM_pclk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CAM_pclk       |    1.222|         |         |         |
+CAM_pclk       |    1.516|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk25_24/clkout0
@@ -690,13 +692,13 @@ ov7076_565_to_332/px_wr|         |         |    1.820|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 36.00 secs
-Total CPU time to Xst completion: 34.73 secs
+Total REAL time to Xst completion: 37.00 secs
+Total CPU time to Xst completion: 34.78 secs
  
 --> 
 
 
-Total memory usage is 506288 kilobytes
+Total memory usage is 506368 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   22 (   0 filtered)
