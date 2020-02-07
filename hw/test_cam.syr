@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Reading design: test_cam.prj
@@ -157,7 +157,9 @@ WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/VG
 WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam.v" Line 168: Result of 18-bit expression is truncated to fit in 15-bit target.
 
 Elaborating module <cam_read(AW=15)>.
-WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 39: Result of 16-bit expression is truncated to fit in 15-bit target.
+WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 50: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:295 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 52: case condition never applies
+WARNING:HDLCompiler:295 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 62: case condition never applies
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -219,16 +221,15 @@ Unit <VGA_Driver640x480> synthesized.
 Synthesizing Unit <cam_read>.
     Related source file is "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v".
         AW = 15
+WARNING:Xst:647 - Input <px_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <px_wr>.
-    Found 8-bit register for signal <mem_px_data>.
-    Found 1-bit register for signal <C>.
+WARNING:Xst:2935 - Signal 'mem_px_data', unconnected in block 'cam_read', is tied to its initial value (00000000).
+WARNING:Xst:2935 - Signal 'px_wr', unconnected in block 'cam_read', is tied to its initial value (0).
     Found 15-bit register for signal <mem_px_addr>.
-    Found 15-bit adder for signal <mem_px_addr[14]_GND_8_o_add_2_OUT> created at line 39.
+    Found 1-bit register for signal <vsync_old>.
+    Found 1-bit register for signal <position>.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  25 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred  17 D-type flip-flop(s).
 Unit <cam_read> synthesized.
 
 =========================================================================
@@ -239,26 +240,24 @@ Macro Statistics
  32768x8-bit dual-port RAM                             : 1
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 4
+# Adders/Subtractors                                   : 3
  10-bit adder                                          : 1
- 15-bit adder                                          : 1
  17-bit adder                                          : 1
  9-bit adder                                           : 1
-# Registers                                            : 7
+# Registers                                            : 6
  1-bit register                                        : 2
  10-bit register                                       : 1
  15-bit register                                       : 1
- 8-bit register                                        : 2
+ 8-bit register                                        : 1
  9-bit register                                        : 1
 # Comparators                                          : 8
  10-bit comparator greater                             : 4
  10-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 2
  9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 5
- 1-bit 2-to-1 multiplexer                              : 2
+# Multiplexers                                         : 2
  15-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -266,44 +265,54 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_0> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_1> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_2> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_3> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_4> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_5> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_6> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_7> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_8> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_9> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_10> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_11> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_12> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_13> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <mem_px_addr_14> has a constant value of 0 in block <ov7076_565_to_332>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <position_0> of sequential type is unconnected in block <ov7076_565_to_332>.
+WARNING:Xst:2677 - Node <vsync_old_0> of sequential type is unconnected in block <ov7076_565_to_332>.
 
 Synthesizing (advanced) Unit <VGA_Driver640x480>.
 The following registers are absorbed into counter <countX>: 1 register on signal <countX>.
 The following registers are absorbed into counter <countY>: 1 register on signal <countY>.
 Unit <VGA_Driver640x480> synthesized (advanced).
 
-Synthesizing (advanced) Unit <buffer_ram_dp>.
-INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_out>
+Synthesizing (advanced) Unit <test_cam>.
+	Multiplier <Mmult_n0029> in block <test_cam> and adder/subtractor <Madd_n0023_Madd> in block <test_cam> are combined into a MAC<Maddsub_n0029>.
+INFO:Xst:3226 - The RAM <DP_RAM/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <DP_RAM/data_out>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32768-word x 8-bit                  |          |
     |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <clk_w>         | rise     |
-    |     weA            | connected to signal <regwrite>      | high     |
-    |     addrA          | connected to signal <addr_in>       |          |
-    |     diA            | connected to signal <data_in>       |          |
+    |     clkA           | connected to signal <CAM_pclk>      | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <DP_RAM_addr_in> |          |
+    |     diA            | connected to signal <GND>           |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 32768-word x 8-bit                  |          |
     |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <clk_r>         | rise     |
-    |     addrB          | connected to signal <addr_out>      |          |
-    |     doB            | connected to signal <data_out>      |          |
+    |     clkB           | connected to signal <clk25M>        | rise     |
+    |     addrB          | connected to signal <DP_RAM_addr_out> |          |
+    |     doB            | connected to signal <data_mem>      |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-Unit <buffer_ram_dp> synthesized (advanced).
-
-Synthesizing (advanced) Unit <cam_read>.
-The following registers are absorbed into counter <mem_px_addr>: 1 register on signal <mem_px_addr>.
-Unit <cam_read> synthesized (advanced).
-
-Synthesizing (advanced) Unit <test_cam>.
-	Multiplier <Mmult_n0029> in block <test_cam> and adder/subtractor <Madd_n0023_Madd> in block <test_cam> are combined into a MAC<Maddsub_n0029>.
 Unit <test_cam> synthesized (advanced).
 
 =========================================================================
@@ -314,19 +323,17 @@ Macro Statistics
  32768x8-bit dual-port block RAM                       : 1
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Counters                                             : 3
+# Counters                                             : 2
  10-bit up counter                                     : 1
- 15-bit up counter                                     : 1
  9-bit up counter                                      : 1
-# Registers                                            : 10
- Flip-Flops                                            : 10
+# Registers                                            : 17
+ Flip-Flops                                            : 17
 # Comparators                                          : 8
  10-bit comparator greater                             : 4
  10-bit comparator lessequal                           : 1
  9-bit comparator greater                              : 2
  9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 12
- 1-bit 2-to-1 multiplexer                              : 10
+# Multiplexers                                         : 2
  15-bit 2-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 1
 
@@ -335,12 +342,31 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <ov7076_565_to_332/mem_px_addr_0> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_1> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_2> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_3> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_4> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_5> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_6> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_7> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_8> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_9> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_10> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_11> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_12> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_13> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ov7076_565_to_332/mem_px_addr_14> has a constant value of 0 in block <test_cam>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ov7076_565_to_332/position_0> of sequential type is unconnected in block <test_cam>.
+WARNING:Xst:2677 - Node <ov7076_565_to_332/vsync_old_0> of sequential type is unconnected in block <test_cam>.
 
 Optimizing unit <test_cam> ...
 
-Optimizing unit <cam_read> ...
-
 Optimizing unit <VGA_Driver640x480> ...
+INFO:Xst:2399 - RAMs <DP_RAM/Mram_ram2>, <DP_RAM/Mram_ram4> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <DP_RAM/Mram_ram1>, <DP_RAM/Mram_ram3> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <DP_RAM/Mram_ram5>, <DP_RAM/Mram_ram7> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <DP_RAM/Mram_ram6>, <DP_RAM/Mram_ram8> are equivalent, second RAM is removed
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -352,8 +378,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 44
- Flip-Flops                                            : 44
+# Registers                                            : 19
+ Flip-Flops                                            : 19
 
 =========================================================================
 
@@ -376,32 +402,30 @@ Top Level Output File Name         : test_cam.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 209
+# BELS                             : 148
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 36
-#      LUT2                        : 39
-#      LUT3                        : 13
-#      LUT4                        : 8
+#      INV                         : 2
+#      LUT1                        : 22
+#      LUT2                        : 36
+#      LUT3                        : 4
+#      LUT4                        : 4
 #      LUT5                        : 2
 #      LUT6                        : 6
-#      MUXCY                       : 47
+#      MUXCY                       : 33
 #      VCC                         : 1
-#      XORCY                       : 52
-# FlipFlops/Latches                : 44
+#      XORCY                       : 37
+# FlipFlops/Latches                : 19
 #      FD                          : 8
-#      FDE                         : 8
-#      FDR                         : 17
 #      FDRE                        : 5
 #      FDS                         : 2
 #      FDSE                        : 4
-# RAMS                             : 8
-#      RAMB36E1                    : 8
+# RAMS                             : 4
+#      RAMB36E1                    : 4
 # Clock Buffers                    : 5
 #      BUFG                        : 4
 #      BUFGP                       : 1
-# IO Buffers                       : 29
-#      IBUF                        : 11
+# IO Buffers                       : 19
+#      IBUF                        : 1
 #      IBUFG                       : 1
 #      OBUF                        : 17
 # Others                           : 1
@@ -414,24 +438,24 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              44  out of  126800     0%  
- Number of Slice LUTs:                  108  out of  63400     0%  
-    Number used as Logic:               108  out of  63400     0%  
+ Number of Slice Registers:              19  out of  126800     0%  
+ Number of Slice LUTs:                   76  out of  63400     0%  
+    Number used as Logic:                76  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    108
-   Number with an unused Flip Flop:      64  out of    108    59%  
-   Number with an unused LUT:             0  out of    108     0%  
-   Number of fully used LUT-FF pairs:    44  out of    108    40%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:     76
+   Number with an unused Flip Flop:      57  out of     76    75%  
+   Number with an unused LUT:             0  out of     76     0%  
+   Number of fully used LUT-FF pairs:    19  out of     76    25%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                          30
- Number of bonded IOBs:                  30  out of    210    14%  
+ Number of bonded IOBs:                  20  out of    210     9%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                8  out of    135     5%  
-    Number using Block RAM only:          8
+ Number of Block RAM/FIFO:                4  out of    135     2%  
+    Number using Block RAM only:          4
  Number of BUFG/BUFGCTRLs:                5  out of     32    15%  
 
 ---------------------------
@@ -452,14 +476,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+---------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                 | Load  |
------------------------------------+---------------------------------------+-------+
-ov7076_565_to_332/px_wr            | NONE(ov7076_565_to_332/mem_px_addr_14)| 15    |
-CAM_pclk                           | BUFGP                                 | 18    |
-clk25_24/clkout0                   | BUFG                                  | 27    |
------------------------------------+---------------------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk25_24/clkout0                   | BUFG                   | 23    |
+CAM_pclk                           | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -477,65 +499,6 @@ Speed Grade: -3
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'ov7076_565_to_332/px_wr'
-  Clock period: 1.820ns (frequency: 549.330MHz)
-  Total number of paths / destination ports: 120 / 15
--------------------------------------------------------------------------
-Delay:               1.820ns (Levels of Logic = 16)
-  Source:            ov7076_565_to_332/mem_px_addr_0 (FF)
-  Destination:       ov7076_565_to_332/mem_px_addr_14 (FF)
-  Source Clock:      ov7076_565_to_332/px_wr falling
-  Destination Clock: ov7076_565_to_332/px_wr falling
-
-  Data Path: ov7076_565_to_332/mem_px_addr_0 to ov7076_565_to_332/mem_px_addr_14
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              9   0.361   0.316  ov7076_565_to_332/mem_px_addr_0 (ov7076_565_to_332/mem_px_addr_0)
-     INV:I->O              1   0.113   0.000  ov7076_565_to_332/Mcount_mem_px_addr_lut<0>_INV_0 (ov7076_565_to_332/Mcount_mem_px_addr_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<0> (ov7076_565_to_332/Mcount_mem_px_addr_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<1> (ov7076_565_to_332/Mcount_mem_px_addr_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<2> (ov7076_565_to_332/Mcount_mem_px_addr_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<3> (ov7076_565_to_332/Mcount_mem_px_addr_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<4> (ov7076_565_to_332/Mcount_mem_px_addr_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<5> (ov7076_565_to_332/Mcount_mem_px_addr_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<6> (ov7076_565_to_332/Mcount_mem_px_addr_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<7> (ov7076_565_to_332/Mcount_mem_px_addr_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<8> (ov7076_565_to_332/Mcount_mem_px_addr_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<9> (ov7076_565_to_332/Mcount_mem_px_addr_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<10> (ov7076_565_to_332/Mcount_mem_px_addr_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<11> (ov7076_565_to_332/Mcount_mem_px_addr_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<12> (ov7076_565_to_332/Mcount_mem_px_addr_cy<12>)
-     MUXCY:CI->O           0   0.023   0.000  ov7076_565_to_332/Mcount_mem_px_addr_cy<13> (ov7076_565_to_332/Mcount_mem_px_addr_cy<13>)
-     XORCY:CI->O           1   0.370   0.000  ov7076_565_to_332/Mcount_mem_px_addr_xor<14> (ov7076_565_to_332/Result<14>)
-     FDR:D                     0.008          ov7076_565_to_332/mem_px_addr_14
-    ----------------------------------------
-    Total                      1.820ns (1.504ns logic, 0.316ns route)
-                                       (82.6% logic, 17.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'CAM_pclk'
-  Clock period: 1.516ns (frequency: 659.631MHz)
-  Total number of paths / destination ports: 29 / 20
--------------------------------------------------------------------------
-Delay:               1.516ns (Levels of Logic = 1)
-  Source:            ov7076_565_to_332/C_0 (FF)
-  Destination:       ov7076_565_to_332/C_0 (FF)
-  Source Clock:      CAM_pclk rising
-  Destination Clock: CAM_pclk rising
-
-  Data Path: ov7076_565_to_332/C_0 to ov7076_565_to_332/C_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q             12   0.361   0.430  ov7076_565_to_332/C_0 (ov7076_565_to_332/C_0)
-     LUT2:I0->O            1   0.097   0.279  ov7076_565_to_332/_n00411 (ov7076_565_to_332/_n0041)
-     FDR:R                     0.349          ov7076_565_to_332/C_0
-    ----------------------------------------
-    Total                      1.516ns (0.807ns logic, 0.709ns route)
-                                       (53.2% logic, 46.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk25_24/clkout0'
@@ -560,45 +523,6 @@ Delay:               2.079ns (Levels of Logic = 3)
     ----------------------------------------
     Total                      2.079ns (0.660ns logic, 1.419ns route)
                                        (31.7% logic, 68.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'ov7076_565_to_332/px_wr'
-  Total number of paths / destination ports: 15 / 15
--------------------------------------------------------------------------
-Offset:              0.694ns (Levels of Logic = 1)
-  Source:            CAM_vsync (PAD)
-  Destination:       ov7076_565_to_332/mem_px_addr_14 (FF)
-  Destination Clock: ov7076_565_to_332/px_wr falling
-
-  Data Path: CAM_vsync to ov7076_565_to_332/mem_px_addr_14
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            15   0.001   0.344  CAM_vsync_IBUF (CAM_vsync_IBUF)
-     FDR:R                     0.349          ov7076_565_to_332/mem_px_addr_0
-    ----------------------------------------
-    Total                      0.694ns (0.350ns logic, 0.344ns route)
-                                       (50.5% logic, 49.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'CAM_pclk'
-  Total number of paths / destination ports: 20 / 20
--------------------------------------------------------------------------
-Offset:              1.072ns (Levels of Logic = 2)
-  Source:            CAM_href (PAD)
-  Destination:       ov7076_565_to_332/C_0 (FF)
-  Destination Clock: CAM_pclk rising
-
-  Data Path: CAM_href to ov7076_565_to_332/C_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            12   0.001   0.346  CAM_href_IBUF (CAM_href_IBUF)
-     LUT2:I1->O            1   0.097   0.279  ov7076_565_to_332/_n00411 (ov7076_565_to_332/_n0041)
-     FDR:R                     0.349          ov7076_565_to_332/C_0
-    ----------------------------------------
-    Total                      1.072ns (0.447ns logic, 0.625ns route)
-                                       (41.7% logic, 58.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk25_24/clkout0'
@@ -665,14 +589,6 @@ Delay:               0.340ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock CAM_pclk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CAM_pclk       |    1.516|         |         |         |
----------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock clk25_24/clkout0
 ----------------+---------+---------+---------+---------+
                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
@@ -681,26 +597,18 @@ Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk25_24/clkout0|    2.079|         |         |         |
 ----------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock ov7076_565_to_332/px_wr
------------------------+---------+---------+---------+---------+
-                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------+---------+---------+---------+---------+
-ov7076_565_to_332/px_wr|         |         |    1.820|         |
------------------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 37.00 secs
-Total CPU time to Xst completion: 34.78 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 33.93 secs
  
 --> 
 
 
-Total memory usage is 506368 kilobytes
+Total memory usage is 506260 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   22 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   61 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

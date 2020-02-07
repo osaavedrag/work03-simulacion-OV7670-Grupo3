@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jan 29 14:58:54 2020
+// Written by: Map P.20131013 on Thu Feb 06 21:47:22 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -26,18 +26,10 @@ PIN DP_RAM/Mram_ram1_pins<65> = BEL "DP_RAM/Mram_ram1" PINNAME CLKBWRCLKU;
 PIN DP_RAM/Mram_ram1_pins<64> = BEL "DP_RAM/Mram_ram1" PINNAME CLKBWRCLKL;
 PIN DP_RAM/Mram_ram2_pins<65> = BEL "DP_RAM/Mram_ram2" PINNAME CLKBWRCLKU;
 PIN DP_RAM/Mram_ram2_pins<64> = BEL "DP_RAM/Mram_ram2" PINNAME CLKBWRCLKL;
-PIN DP_RAM/Mram_ram3_pins<65> = BEL "DP_RAM/Mram_ram3" PINNAME CLKBWRCLKU;
-PIN DP_RAM/Mram_ram3_pins<64> = BEL "DP_RAM/Mram_ram3" PINNAME CLKBWRCLKL;
-PIN DP_RAM/Mram_ram4_pins<65> = BEL "DP_RAM/Mram_ram4" PINNAME CLKBWRCLKU;
-PIN DP_RAM/Mram_ram4_pins<64> = BEL "DP_RAM/Mram_ram4" PINNAME CLKBWRCLKL;
 PIN DP_RAM/Mram_ram5_pins<65> = BEL "DP_RAM/Mram_ram5" PINNAME CLKBWRCLKU;
 PIN DP_RAM/Mram_ram5_pins<64> = BEL "DP_RAM/Mram_ram5" PINNAME CLKBWRCLKL;
 PIN DP_RAM/Mram_ram6_pins<65> = BEL "DP_RAM/Mram_ram6" PINNAME CLKBWRCLKU;
 PIN DP_RAM/Mram_ram6_pins<64> = BEL "DP_RAM/Mram_ram6" PINNAME CLKBWRCLKL;
-PIN DP_RAM/Mram_ram7_pins<65> = BEL "DP_RAM/Mram_ram7" PINNAME CLKBWRCLKU;
-PIN DP_RAM/Mram_ram7_pins<64> = BEL "DP_RAM/Mram_ram7" PINNAME CLKBWRCLKL;
-PIN DP_RAM/Mram_ram8_pins<65> = BEL "DP_RAM/Mram_ram8" PINNAME CLKBWRCLKU;
-PIN DP_RAM/Mram_ram8_pins<64> = BEL "DP_RAM/Mram_ram8" PINNAME CLKBWRCLKL;
 TIMEGRP clk25_24_clkout0 = BEL "clk25_24/clkout1_buf" BEL
         "VGA640x480/countY_0" BEL "VGA640x480/countY_7" BEL
         "VGA640x480/countY_6" BEL "VGA640x480/countY_8" BEL
@@ -50,13 +42,9 @@ TIMEGRP clk25_24_clkout0 = BEL "clk25_24/clkout1_buf" BEL
         "VGA640x480/countX_5" BEL "VGA640x480/countX_2" BEL
         "VGA640x480/countX_1" PIN "DP_RAM/Mram_ram1_pins<65>" PIN
         "DP_RAM/Mram_ram1_pins<64>" PIN "DP_RAM/Mram_ram2_pins<65>" PIN
-        "DP_RAM/Mram_ram2_pins<64>" PIN "DP_RAM/Mram_ram3_pins<65>" PIN
-        "DP_RAM/Mram_ram3_pins<64>" PIN "DP_RAM/Mram_ram4_pins<65>" PIN
-        "DP_RAM/Mram_ram4_pins<64>" PIN "DP_RAM/Mram_ram5_pins<65>" PIN
+        "DP_RAM/Mram_ram2_pins<64>" PIN "DP_RAM/Mram_ram5_pins<65>" PIN
         "DP_RAM/Mram_ram5_pins<64>" PIN "DP_RAM/Mram_ram6_pins<65>" PIN
-        "DP_RAM/Mram_ram6_pins<64>" PIN "DP_RAM/Mram_ram7_pins<65>" PIN
-        "DP_RAM/Mram_ram7_pins<64>" PIN "DP_RAM/Mram_ram8_pins<65>" PIN
-        "DP_RAM/Mram_ram8_pins<64>";
+        "DP_RAM/Mram_ram6_pins<64>";
 PIN clk25_24/mmcm_adv_inst_pins<2> = BEL "clk25_24/mmcm_adv_inst" PINNAME
         CLKIN1;
 TIMEGRP sys_clk_pin = BEL "clk25_24/clkin1_buf" PIN
