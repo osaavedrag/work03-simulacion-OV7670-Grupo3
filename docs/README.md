@@ -25,5 +25,7 @@ Como evidenciamos perfectamente en la imagen, en la primera prueba el modulo de 
 
 Aca podemos apreciar existe un error de sintaxis en el primer ciclo, al cerrar este antesde que pudiera entrar en la consicion del else, por consiguiente resulta que jamas actualiza realmente una posicion de memoria ni lleva la convercion de manera adecuda, por lo que siempre manda la informacion del rojo en toda la simulacion, luego de corregir el error presentado, se llego al siguiente codigo:
 
+![lectura1](./figs/cod_2.png)
 
+Ademas de este cambio, tambien se altero el codigo de 
 
