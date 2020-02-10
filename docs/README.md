@@ -15,6 +15,12 @@ Primeramente se clono el repositorio y provo la creacion del archivo a simular s
 
 
 
-La siguiente parte fue integrar el modulo de captura de camara desarrollado en el taller
+La siguiente parte fue integrar el modulo de captura de camara desarrollado en el taller al paquete y volver a simular el mismo, el modulo el resultado de esto se muestra a continuacion:
+
+![lectura1](./figs/prueba_2.png)
+
+Como evidenciamos perfectamente en la imagen, en la primera prueba el modulo de captura mostro estar mal, ya que no arrojaba la figura que en teoria debia mostrar, vemos como pinta los dos frames de color rojo completamente. Al revisar el codigo de la captura de datos, encontramos la siguiente seccion:
+
+
 
 
