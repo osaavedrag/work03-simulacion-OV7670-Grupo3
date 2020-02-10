@@ -1,3 +1,19 @@
-#Modulo Cam_read
+## Modulo Cam_read
+### Ericson Brayan Mesa Orjuela
 
-En este trabajo se buscaba integrar un nuevo modulo basado en el modulo de captura de datos realizado en la anterior vez, para ello se alteraron los nombres de las variables y suprimieron algunos registros que no eran necesarios para esta entrega
+### Oscar Mauricio Saavedra Gonzalez
+
+### Sergio Andres Gerena Gomez
+
+
+En este trabajo se buscaba integrar un nuevo modulo basado en el modulo de captura de datos realizado en la anterior vez, para ello se alteraron los nombres de las variables y verifico el funcionamiento del mismo con un simulador de VGA, a continuacion se muestra los resultados de  esto y las diversas dificultades presentadas a lo largo de este desarrollo.
+
+
+Primeramente se clono el repositorio y provo la creacion del archivo a simular sin alterar el codigo presentado, en esta etapa mostramos la simulacion del VGA a continuación:
+
+
+
+
+La siguiente parte fue integrar el modulo de captura de camara desarrollado en el taller
+
+
