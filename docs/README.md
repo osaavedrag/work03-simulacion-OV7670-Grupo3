@@ -11,7 +11,7 @@ En este trabajo se buscaba integrar un nuevo modulo basado en el modulo de captu
 
 Primeramente se clono el repositorio y provo la creacion del archivo a simular sin alterar el codigo presentado, en esta etapa mostramos la simulacion del VGA a continuación:
 
-![lectura1](./figs/Captura de pantalla de 2020-02-09 21-05-17.png)
+![lectura1](./figs/prueba_1.png)
 
 
 
