@@ -21,6 +21,7 @@
 module test_cam(
     input wire clk,           // board clock: 32 MHz quacho 100 MHz nexys4 
     input wire rst,         	// reset button
+	 input wire btnP,
 
 	// VGA input/output  
     output wire VGA_Hsync_n,  // horizontal sync output
@@ -34,12 +35,9 @@ module test_cam(
 	output wire CAM_xclk,		// System  clock imput
 	output wire CAM_pwdn,		// power down mode 
 	output wire CAM_reset,		// clear all registers of cam
-	/*output wire [7:0] pixel,
-	output wire [7:0] column,
-	output wire [7:0]column1,
-	output wire [7:0]column2,
-   output wire [7:0]pixel1,
-	output wire [7:0]pixel2,*/
+	output wire [7:0] row,
+	output wire [7:0] pixel,
+	
 	
 	// colocar aqui las entras  y salidas de la camara  que hace falta
 
@@ -174,38 +172,19 @@ end
 
 **************************************************************************** */
 
-/*BCDtoSSeg C1(
-	.BCD(column[3:0]),
-	.SSeg(column1)
-	);
-	
-BCDtoSSeg C2(
-	.BCD(column[7:4]),
-	.SSeg(column2)
-	);
-	
-BCDtoSSeg P1(
-	.BCD(pixel[3:0]),
-	.SSeg(pixel1)
-	);
-	
-BCDtoSSeg P2(
-	.BCD(pixel[7:4]),
-	.SSeg(pixel2)
-	);*/
-
  cam_read #(AW)ov7076_565_to_332(
 		.pclk(CAM_pclk),
 		.rst(rst),
 		.vsync(CAM_vsync),
 		.href(CAM_href),
 		.px_data(CAM_px_data),
+		.btnP(btnP),
 
 		.mem_px_addr(DP_RAM_addr_in),
 		.mem_px_data(DP_RAM_data_in),
-		.px_wr(DP_RAM_regW)
-		/*.Column(column),
-		.pixel(pixel)*/
+		.px_wr(DP_RAM_regW),
+		.Row(row),
+		.Pixel(pixel)
    );
 	
 

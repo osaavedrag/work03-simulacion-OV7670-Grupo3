@@ -39,8 +39,10 @@ localparam NPOS = 2 ** AW; // Memoria
 
 //	 escritura  de la memoria port 1 
 always @(posedge clk_w) begin 
-       if (regwrite == 1) 
-             ram[addr_in] <= data_in;		 
+       if (regwrite == 1) begin
+			if(addr_in<=19200) ram[addr_in] <= data_in;
+			else ram[addr_in] <= 8'b00000000;
+			end
 end
 
 //	 Lectura  de la memoria port 2 

@@ -41,8 +41,10 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="test_cam.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="test_cam.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="test_cam.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="test_cam.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="test_cam.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="test_cam.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="test_cam.ncd" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="test_cam.ngc"/>
@@ -80,6 +82,8 @@
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="test_cam_summary.xml"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="test_cam_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="test_cam_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -94,6 +98,10 @@
     <transform xil_pn:end_ts="1581044800" xil_pn:in_ck="3728049635395079457" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1581044800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="BCDtoSSeg.v"/>
       <outfile xil_pn:name="src/PLL/clk24_25_nexys4.v"/>
       <outfile xil_pn:name="src/VGA_driver.v"/>
@@ -117,6 +125,11 @@
     <transform xil_pn:end_ts="1581044800" xil_pn:in_ck="3728049635395079457" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1581044800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="BCDtoSSeg.v"/>
       <outfile xil_pn:name="src/PLL/clk24_25_nexys4.v"/>
       <outfile xil_pn:name="src/VGA_driver.v"/>
@@ -128,8 +141,11 @@
     <transform xil_pn:end_ts="1581044812" xil_pn:in_ck="3728049635395079457" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2515516211267276679" xil_pn:start_ts="1581044800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
@@ -141,7 +157,10 @@
     <transform xil_pn:end_ts="1581044812" xil_pn:in_ck="8344375943567567401" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7919211213271121422" xil_pn:start_ts="1581044812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="cam_read_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -174,13 +193,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1581043518" xil_pn:in_ck="-5758375034855979935" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="7311333008293208716" xil_pn:start_ts="1581043478">
+    <transform xil_pn:end_ts="1581392373" xil_pn:in_ck="-5758375034855979935" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="7311333008293208716" xil_pn:start_ts="1581392329">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="test_cam.lso"/>
@@ -195,27 +212,23 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1579619155" xil_pn:in_ck="7741436095548868057" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784894219589610610" xil_pn:start_ts="1579619155">
+    <transform xil_pn:end_ts="1581393250" xil_pn:in_ck="1627245917311936256" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4784894219589610610" xil_pn:start_ts="1581393250">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1581043544" xil_pn:in_ck="3330432229120014671" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="8375198647032330910" xil_pn:start_ts="1581043518">
+    <transform xil_pn:end_ts="1581393276" xil_pn:in_ck="8746823732519718134" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="8375198647032330910" xil_pn:start_ts="1581393250">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="test_cam.bld"/>
       <outfile xil_pn:name="test_cam.ngd"/>
       <outfile xil_pn:name="test_cam_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1581043648" xil_pn:in_ck="3330432229120014672" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1581043544">
+    <transform xil_pn:end_ts="1581393400" xil_pn:in_ck="8746823732519718135" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1581393276">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="test_cam.pcf"/>
       <outfile xil_pn:name="test_cam_map.map"/>
@@ -226,10 +239,9 @@
       <outfile xil_pn:name="test_cam_summary.xml"/>
       <outfile xil_pn:name="test_cam_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1581043742" xil_pn:in_ck="-2854029628383235991" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1581043648">
+    <transform xil_pn:end_ts="1581393493" xil_pn:in_ck="-4966809046459105392" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1581393400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="test_cam.ncd"/>
       <outfile xil_pn:name="test_cam.pad"/>
@@ -241,19 +253,21 @@
       <outfile xil_pn:name="test_cam_pad.txt"/>
       <outfile xil_pn:name="test_cam_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1581043772" xil_pn:in_ck="6023078477744547187" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1581043742">
-      <status xil_pn:value="FailedRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
-      <outfile xil_pn:name="test_cam.bgn"/>
-      <outfile xil_pn:name="test_cam.ut"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-    </transform>
-    <transform xil_pn:end_ts="1581043742" xil_pn:in_ck="3330432229120014540" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1581043705">
+    <transform xil_pn:end_ts="1581393726" xil_pn:in_ck="6023078477744547187" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1581393638">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="test_cam.bgn"/>
+      <outfile xil_pn:name="test_cam.bit"/>
+      <outfile xil_pn:name="test_cam.drc"/>
+      <outfile xil_pn:name="test_cam.ut"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1581393493" xil_pn:in_ck="8746823732519718003" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1581393458">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="test_cam.twr"/>
       <outfile xil_pn:name="test_cam.twx"/>
