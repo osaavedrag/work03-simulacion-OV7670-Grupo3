@@ -27,5 +27,4 @@ Aca podemos apreciar existe un error de sintaxis en el primer ciclo, al cerrar e
 
 ![lectura1](./figs/cod_2.png)
 
-Ademas de este cambio, tambien se altero el codigo de 
 
