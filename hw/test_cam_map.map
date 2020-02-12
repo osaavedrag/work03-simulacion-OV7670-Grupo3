@@ -10,7 +10,7 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 11 23:20:27 2020
+Mapped Date    : Wed Feb 12 14:03:43 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,25 +19,38 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 1 mins 2 secs 
+Total REAL time at the beginning of Placer: 56 secs 
 Total CPU  time at the beginning of Placer: 56 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:4862cd1d) REAL time: 1 mins 7 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:aa7cb11e) REAL time: 1 mins 1 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:4862cd1d) REAL time: 1 mins 8 secs 
+Phase 2.7  Design Feasibility Check (Checksum:aa7cb11e) REAL time: 1 mins 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:4862cd1d) REAL time: 1 mins 8 secs 
+Phase 3.31  Local Placement Optimization (Checksum:aa7cb11e) REAL time: 1 mins 1 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 ........
 WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
    that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
+   IOB component <btnP> is placed at site <M18>. The corresponding BUFGCTRL
+   component <btnP_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y29>. The clock IO
+   can use the fast path between the IOB and the Clock Buffer if the IOB is
+   placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
+   sites in its half of the device (TOP or BOTTOM). You may want to analyze why
+   this problem exists and correct it. This is normally an ERROR but the
+   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <btnP.PAD> allowing
+   your design to continue. This constraint disables all clock placer rules
+   related to the specified COMP.PIN. The use of this override is highly
+   discouraged as it may lead to very poor timing results. It is recommended
+   that this error condition be corrected in the design.
+WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
+   that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
    IOB component <CAM_pclk> is placed at site <G3>. The corresponding BUFGCTRL
-   component <CAM_pclk_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y4>. The clock
+   component <CAM_pclk_BUFGP/BUFG> is placed at site <BUFGCTRL_X0Y2>. The clock
    IO can use the fast path between the IOB and the Clock Buffer if the IOB is
    placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
    sites in its half of the device (TOP or BOTTOM). You may want to analyze why
@@ -47,40 +60,55 @@ WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
    rules related to the specified COMP.PIN. The use of this override is highly
    discouraged as it may lead to very poor timing results. It is recommended
    that this error condition be corrected in the design.
+WARNING:Place:1399 - A clock IOB / BUFGCTRL clock component pair have been found
+   that are not placed at an optimal clock IOB / BUFGCTRL site pair. The clock
+   IOB component <CAM_vsync> is placed at site <G1>. The corresponding BUFGCTRL
+   component <CAM_vsync_IBUF_BUFG> is placed at site <BUFGCTRL_X0Y8>. The clock
+   IO can use the fast path between the IOB and the Clock Buffer if the IOB is
+   placed on a Clock Capable IOB site that has dedicated fast path to BUFGCTRL
+   sites in its half of the device (TOP or BOTTOM). You may want to analyze why
+   this problem exists and correct it. This is normally an ERROR but the
+   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <CAM_vsync.PAD>
+   allowing your design to continue. This constraint disables all clock placer
+   rules related to the specified COMP.PIN. The use of this override is highly
+   discouraged as it may lead to very poor timing results. It is recommended
+   that this error condition be corrected in the design.
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:4659b2f6) REAL time: 1 mins 22 secs 
+(Checksum:49e290ee) REAL time: 1 mins 15 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:4659b2f6) REAL time: 1 mins 22 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:49e290ee) REAL time: 1 mins 15 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:4659b2f6) REAL time: 1 mins 22 secs 
+Phase 6.3  Local Placement Optimization (Checksum:49e290ee) REAL time: 1 mins 15 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:4659b2f6) REAL time: 1 mins 22 secs 
+Phase 7.5  Local Placement Optimization (Checksum:49e290ee) REAL time: 1 mins 15 secs 
 
 Phase 8.8  Global Placement
 ........................................
 .......
-..
+...
 ................
 ................
-Phase 8.8  Global Placement (Checksum:317ad345) REAL time: 1 mins 52 secs 
+........................................
+.........
+Phase 8.8  Global Placement (Checksum:9257f33b) REAL time: 2 mins 30 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:317ad345) REAL time: 1 mins 52 secs 
+Phase 9.5  Local Placement Optimization (Checksum:9257f33b) REAL time: 2 mins 31 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:1941e64f) REAL time: 2 mins 
+Phase 10.18  Placement Optimization (Checksum:cbcaac5c) REAL time: 2 mins 36 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:1941e64f) REAL time: 2 mins 
+Phase 11.5  Local Placement Optimization (Checksum:cbcaac5c) REAL time: 2 mins 36 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:1941e64f) REAL time: 2 mins 
+Phase 12.34  Placement Validation (Checksum:cbcaac5c) REAL time: 2 mins 36 secs 
 
-Total REAL time to Placer completion: 2 mins 1 secs 
-Total CPU  time to Placer completion: 1 mins 55 secs 
+Total REAL time to Placer completion: 2 mins 37 secs 
+Total CPU  time to Placer completion: 2 mins 37 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -89,16 +117,16 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    3
 Slice Logic Utilization:
   Number of Slice Registers:                    63 out of 126,800    1%
     Number used as Flip Flops:                  63
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        135 out of  63,400    1%
-    Number used as logic:                      131 out of  63,400    1%
-      Number using O6 output only:              65
+  Number of Slice LUTs:                        134 out of  63,400    1%
+    Number used as logic:                      130 out of  63,400    1%
+      Number using O6 output only:              64
       Number using O5 output only:              19
       Number using O5 and O6:                   47
       Number used as ROM:                        0
@@ -109,14 +137,14 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    56 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          136
-    Number with an unused Flip Flop:            75 out of     136   55%
-    Number with an unused LUT:                   1 out of     136    1%
-    Number of fully used LUT-FF pairs:          60 out of     136   44%
-    Number of unique control sets:              10
+  Number of occupied Slices:                    59 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          135
+    Number with an unused Flip Flop:            74 out of     135   54%
+    Number with an unused LUT:                   1 out of     135    1%
+    Number of fully used LUT-FF pairs:          60 out of     135   44%
+    Number of unique control sets:               9
     Number of slice register sites lost
-      to control set restrictions:              41 out of 126,800    1%
+      to control set restrictions:              33 out of 126,800    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -129,19 +157,23 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        47 out of     210   22%
     Number of LOCed IOBs:                       47 out of      47  100%
+    IOB Flip Flops:                             16
 
 Specific Feature Utilization:
   Number of RAMB36E1/FIFO36E1s:                  8 out of     135    5%
     Number using RAMB36E1 only:                  8
     Number using FIFO36E1 only:                  0
   Number of RAMB18E1/FIFO18E1s:                  0 out of     270    0%
-  Number of BUFG/BUFGCTRLs:                      6 out of      32   18%
-    Number used as BUFGs:                        6
+  Number of BUFG/BUFGCTRLs:                      7 out of      32   21%
+    Number used as BUFGs:                        7
     Number used as BUFGCTRLs:                    0
   Number of IDELAYE2/IDELAYE2_FINEDELAYs:        0 out of     300    0%
   Number of ILOGICE2/ILOGICE3/ISERDESE2s:        0 out of     300    0%
   Number of ODELAYE2/ODELAYE2_FINEDELAYs:        0
-  Number of OLOGICE2/OLOGICE3/OSERDESE2s:        0 out of     300    0%
+  Number of OLOGICE2/OLOGICE3/OSERDESE2s:       16 out of     300    5%
+    Number used as OLOGICE2s:                   16
+    Number used as OLOGICE3s:                    0
+    Number used as OSERDESE2s:                   0
   Number of PHASER_IN/PHASER_IN_PHYs:            0 out of      24    0%
   Number of PHASER_OUT/PHASER_OUT_PHYs:          0 out of      24    0%
   Number of BSCANs:                              0 out of       4    0%
@@ -165,11 +197,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                6.22
+Average Fanout of Non-Clock Nets:                5.83
 
 Peak Memory Usage:  1229 MB
-Total REAL time to MAP completion:  2 mins 5 secs 
-Total CPU time to MAP completion:   1 mins 58 secs 
+Total REAL time to MAP completion:  2 mins 40 secs 
+Total CPU time to MAP completion:   2 mins 40 secs 
 
 Mapping completed.
 See MAP report file "test_cam_map.mrp" for details.

@@ -38,6 +38,8 @@ module cam_read #(
 reg [0:0] vsync_old = 1;
 reg [2:0] position = 0;
 reg pic = 0;
+reg [7:0] crow = 0;
+reg [7:0] cpixel = 0;
 
 always @ (posedge btnP) begin
 	
@@ -45,6 +47,12 @@ always @ (posedge btnP) begin
 	
 end
 
+always @ (posedge vsync) begin
+	
+	Row = crow;
+	Pixel = cpixel;
+	
+end
 
 always @ (posedge pclk) begin
 
@@ -52,15 +60,15 @@ always @ (posedge pclk) begin
 			0: begin 
 					if (!pic) begin
 						mem_px_addr = 15'b111111111111111;
-						Row = 0;
+						crow = 0;
 						if (!vsync && vsync_old) position = 1;
 					end
 				end
 			1: begin 
 					if (vsync && !vsync_old) position = 0;
 					if (href) begin
-						Row = Row + 1;
-						Pixel = 0;
+						crow = crow + 1;
+						cpixel = 0;
 						px_wr <= 0;
 						mem_px_data[7] = px_data[7];
 						mem_px_data[6] = px_data[6];
@@ -73,6 +81,8 @@ always @ (posedge pclk) begin
 				end
 			2: begin 
 					px_wr <= 0;
+					cpixel = cpixel + 1;
+					mem_px_addr = mem_px_addr+1;
 					mem_px_data[7] = px_data[7];
 					mem_px_data[6] = px_data[6];
 					mem_px_data[5] = px_data[5];
@@ -85,8 +95,6 @@ always @ (posedge pclk) begin
 					mem_px_data[1] = px_data[4];
 					mem_px_data[0] = px_data[3];
 					px_wr <= 1;
-					mem_px_addr = mem_px_addr+1;
-					Pixel = Pixel + 1;
 					if (href)	position = 2;
 					else			position = 1;
 				end
