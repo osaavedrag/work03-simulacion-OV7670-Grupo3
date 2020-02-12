@@ -5,19 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="114" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam_TB.v" Line 204: /* in comment
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam_TB.v" Line 47: Port <arg fmt="%s" index="1">btnP</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="114" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam_TB.v" Line 257: /* in comment
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="114" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam_TB.v" Line 271: /* in comment
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="114" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam_TB.v" Line 322: /* in comment
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam.v" Line 115: Port <arg fmt="%s" index="1">LOCKED</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/test_cam.v" Line 113: Port <arg fmt="%s" index="1">LOCKED</arg> is not connected to this instance
 </msg>
 
 </messages>

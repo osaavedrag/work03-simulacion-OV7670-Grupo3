@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Reading design: test_cam.prj
@@ -159,8 +159,8 @@ WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/te
 Elaborating module <cam_read(AW=15)>.
 WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 44: Result of 2-bit expression is truncated to fit in 1-bit target.
 WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 62: Result of 9-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 87: Result of 16-bit expression is truncated to fit in 15-bit target.
-WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 88: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 88: Result of 16-bit expression is truncated to fit in 15-bit target.
+WARNING:HDLCompiler:413 - "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/src/cam_read.v" Line 89: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -230,6 +230,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     Found 8-bit register for signal <Row>.
     Found 3-bit register for signal <position>.
     Found 8-bit register for signal <Pixel>.
+    Found 1-bit register for signal <px_wr>.
     Found 1-bit register for signal <mem_px_data<7>>.
     Found 1-bit register for signal <mem_px_data<6>>.
     Found 1-bit register for signal <mem_px_data<5>>.
@@ -238,7 +239,6 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     Found 1-bit register for signal <mem_px_data<2>>.
     Found 1-bit register for signal <mem_px_data<1>>.
     Found 1-bit register for signal <mem_px_data<0>>.
-    Found 1-bit register for signal <px_wr>.
     Found 1-bit register for signal <vsync_old>.
     Found 1-bit register for signal <pic>.
     Found finite state machine <FSM_0> for signal <position>.
@@ -246,7 +246,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     | States             | 4                                              |
     | Transitions        | 11                                             |
     | Inputs             | 4                                              |
-    | Outputs            | 6                                              |
+    | Outputs            | 3                                              |
     | Clock              | pclk (rising_edge)                             |
     | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
@@ -254,9 +254,9 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
     -----------------------------------------------------------------------
     Found 1-bit adder for signal <pic_PWR_7_o_add_1_OUT<0>> created at line 44.
     Found 8-bit adder for signal <Row[7]_GND_8_o_add_8_OUT> created at line 62.
-    Found 15-bit adder for signal <mem_px_addr[14]_GND_8_o_add_12_OUT> created at line 87.
-    Found 8-bit adder for signal <Pixel[7]_GND_8_o_add_13_OUT> created at line 88.
-    Found 8-bit 4-to-1 multiplexer for signal <position[2]_mem_px_data[7]_select_24_OUT> created at line 51.
+    Found 15-bit adder for signal <mem_px_addr[14]_GND_8_o_add_12_OUT> created at line 88.
+    Found 8-bit adder for signal <Pixel[7]_GND_8_o_add_13_OUT> created at line 89.
+    Found 8-bit 4-to-1 multiplexer for signal <position[2]_mem_px_data[7]_select_25_OUT> created at line 51.
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred  42 D-type flip-flop(s).
@@ -432,11 +432,11 @@ Top Level Output File Name         : test_cam.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 289
+# BELS                             : 290
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 22
-#      LUT2                        : 60
+#      LUT2                        : 61
 #      LUT3                        : 7
 #      LUT4                        : 11
 #      LUT5                        : 15
@@ -446,10 +446,10 @@ Primitive and Black Box Usage:
 #      VCC                         : 1
 #      XORCY                       : 68
 # FlipFlops/Latches                : 63
-#      FD                          : 14
+#      FD                          : 13
 #      FDE                         : 31
 #      FDR                         : 7
-#      FDRE                        : 5
+#      FDRE                        : 6
 #      FDS                         : 2
 #      FDSE                        : 4
 # RAMS                             : 8
@@ -472,15 +472,15 @@ Selected Device : 7a100tcsg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              63  out of  126800     0%  
- Number of Slice LUTs:                  150  out of  63400     0%  
-    Number used as Logic:               150  out of  63400     0%  
+ Number of Slice LUTs:                  151  out of  63400     0%  
+    Number used as Logic:               151  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    151
-   Number with an unused Flip Flop:      88  out of    151    58%  
-   Number with an unused LUT:             1  out of    151     0%  
-   Number of fully used LUT-FF pairs:    62  out of    151    41%  
-   Number of unique control sets:         9
+ Number of LUT Flip Flop pairs used:    152
+   Number with an unused Flip Flop:      89  out of    152    58%  
+   Number with an unused LUT:             1  out of    152     0%  
+   Number of fully used LUT-FF pairs:    62  out of    152    40%  
+   Number of unique control sets:        10
 
 IO Utilization: 
  Number of IOs:                          47
@@ -537,7 +537,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CAM_pclk'
   Clock period: 2.784ns (frequency: 359.218MHz)
-  Total number of paths / destination ports: 725 / 81
+  Total number of paths / destination ports: 726 / 82
 -------------------------------------------------------------------------
 Delay:               2.784ns (Levels of Logic = 3)
   Source:            ov7076_565_to_332/mem_px_addr_14 (FF)
@@ -605,9 +605,9 @@ Delay:               2.208ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CAM_pclk'
-  Total number of paths / destination ports: 34 / 27
+  Total number of paths / destination ports: 35 / 28
 -------------------------------------------------------------------------
-Offset:              0.925ns (Levels of Logic = 2)
+Offset:              0.930ns (Levels of Logic = 2)
   Source:            CAM_href (PAD)
   Destination:       ov7076_565_to_332/Pixel_7 (FF)
   Destination Clock: CAM_pclk rising
@@ -616,12 +616,12 @@ Offset:              0.925ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   0.001   0.421  CAM_href_IBUF (CAM_href_IBUF)
-     LUT3:I1->O            8   0.097   0.311  ov7076_565_to_332/_n0187_inv1 (ov7076_565_to_332/_n0187_inv)
+     IBUF:I->O            11   0.001   0.426  CAM_href_IBUF (CAM_href_IBUF)
+     LUT3:I1->O            8   0.097   0.311  ov7076_565_to_332/_n0195_inv1 (ov7076_565_to_332/_n0195_inv)
      FDE:CE                    0.095          ov7076_565_to_332/Pixel_0
     ----------------------------------------
-    Total                      0.925ns (0.193ns logic, 0.732ns route)
-                                       (20.9% logic, 79.1% route)
+    Total                      0.930ns (0.193ns logic, 0.737ns route)
+                                       (20.8% logic, 79.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk25_24/clkout0'
@@ -734,8 +734,8 @@ clk25_24/clkout0|    2.208|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 39.46 secs
+Total REAL time to Xst completion: 39.00 secs
+Total CPU time to Xst completion: 35.16 secs
  
 --> 
 

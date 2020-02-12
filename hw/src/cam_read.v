@@ -51,7 +51,7 @@ always @ (posedge pclk) begin
 	case(position)
 			0: begin 
 					if (!pic) begin
-						mem_px_addr = 0;
+						mem_px_addr = 15'b111111111111111;
 						Row = 0;
 						if (!vsync && vsync_old) position = 1;
 					end
@@ -61,6 +61,7 @@ always @ (posedge pclk) begin
 					if (href) begin
 						Row = Row + 1;
 						Pixel = 0;
+						px_wr <= 0;
 						mem_px_data[7] = px_data[7];
 						mem_px_data[6] = px_data[6];
 						mem_px_data[5] = px_data[5];
@@ -71,7 +72,7 @@ always @ (posedge pclk) begin
 					end
 				end
 			2: begin 
-					px_wr = 0;
+					px_wr <= 0;
 					mem_px_data[7] = px_data[7];
 					mem_px_data[6] = px_data[6];
 					mem_px_data[5] = px_data[5];
@@ -83,14 +84,14 @@ always @ (posedge pclk) begin
 			3: begin 
 					mem_px_data[1] = px_data[4];
 					mem_px_data[0] = px_data[3];
-					px_wr = 1;
+					px_wr <= 1;
 					mem_px_addr = mem_px_addr+1;
 					Pixel = Pixel + 1;
 					if (href)	position = 2;
 					else			position = 1;
 				end
 			default: begin
-							px_wr = 0;
+							px_wr <= 0;
 						end
 		endcase
 		vsync_old = vsync;

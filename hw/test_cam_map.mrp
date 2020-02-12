@@ -10,7 +10,7 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Mon Feb 10 22:54:40 2020
+Mapped Date    : Tue Feb 11 23:20:27 2020
 
 Design Summary
 --------------
@@ -22,11 +22,11 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        133 out of  63,400    1%
-    Number used as logic:                      129 out of  63,400    1%
-      Number using O6 output only:              62
+  Number of Slice LUTs:                        135 out of  63,400    1%
+    Number used as logic:                      131 out of  63,400    1%
+      Number using O6 output only:              65
       Number using O5 output only:              19
-      Number using O5 and O6:                   48
+      Number using O5 and O6:                   47
       Number used as ROM:                        0
     Number used as Memory:                       0 out of  19,000    0%
     Number used exclusively as route-thrus:      4
@@ -36,13 +36,13 @@ Slice Logic Utilization:
 
 Slice Logic Distribution:
   Number of occupied Slices:                    56 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          134
-    Number with an unused Flip Flop:            74 out of     134   55%
-    Number with an unused LUT:                   1 out of     134    1%
-    Number of fully used LUT-FF pairs:          59 out of     134   44%
-    Number of unique control sets:               9
+  Number of LUT Flip Flop pairs used:          136
+    Number with an unused Flip Flop:            75 out of     136   55%
+    Number with an unused LUT:                   1 out of     136    1%
+    Number of fully used LUT-FF pairs:          60 out of     136   44%
+    Number of unique control sets:              10
     Number of slice register sites lost
-      to control set restrictions:              33 out of 126,800    1%
+      to control set restrictions:              41 out of 126,800    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -91,11 +91,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                6.23
+Average Fanout of Non-Clock Nets:                6.22
 
 Peak Memory Usage:  1229 MB
-Total REAL time to MAP completion:  1 mins 58 secs 
-Total CPU time to MAP completion:   1 mins 57 secs 
+Total REAL time to MAP completion:  2 mins 5 secs 
+Total CPU time to MAP completion:   1 mins 58 secs 
 
 Table of Contents
 -----------------

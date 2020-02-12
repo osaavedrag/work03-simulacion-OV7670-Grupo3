@@ -3,17 +3,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line:
 /home/saav9/Documentos/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -nt timestamp -uc
-/home/saav9/work02-captura-datos-0v7670-grupo-03/hdl/src/Nexys4_Master.ucf -p
-xc7a100t-csg324-3 test_cam.ngc test_cam.ngd
+ise -dd _ngo -nt timestamp -uc src/Nexys4_Master.ucf -p xc7a100t-csg324-3
+test_cam.ngc test_cam.ngd
 
 Reading NGO file "/home/saav9/work03-simulacion-OV7670-Grupo3/hw/test_cam.ngc"
 ...
 Gathering constraint information from source properties...
 Done.
 
-Annotating constraints to design from ucf file
-"/home/saav9/work02-captura-datos-0v7670-grupo-03/hdl/src/Nexys4_Master.ucf" ...
+Annotating constraints to design from ucf file "src/Nexys4_Master.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 Done...
@@ -31,10 +29,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 458524 kilobytes
+Total memory usage is 458528 kilobytes
 
 Writing NGD file "test_cam.ngd" ...
-Total REAL time to NGDBUILD completion:  23 sec
+Total REAL time to NGDBUILD completion:  24 sec
 Total CPU time to NGDBUILD completion:   22 sec
 
 Writing NGDBUILD log file "test_cam.bld"...
